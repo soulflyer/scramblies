@@ -2,16 +2,10 @@
   (:require [midje.sweet :refer :all]
             [scramblies.core :refer :all]))
 
-(println "You should expect to see three failures below.")
+(println "Midje tests running")
 
-(facts "about `first-element`"
-  (fact "it normally returns the first element"
-    (first-element [1 2 3] :default) => 1
-    (first-element '(1 2 3) :default) => 1)
-
-  ;; I'm a little unsure how Clojure types map onto the Lisp I'm used to.
-  (fact "default value is returned for empty sequences"
-    (first-element [] :default) => :default
-    (first-element '() :default) => :default
-    (first-element nil :default) => :default
-    (first-element (filter even? [1 3 5]) :default) => :default))
+(facts "about scramblies"
+       (fact "returns true if second string can be constructed from the first"
+             (scramble? "rekqodlw" "world") => true
+             (scramble? "cedewaraaossoqqyt" "codewars") => true
+             (scramble? "katas"  "steak") => false))
