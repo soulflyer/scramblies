@@ -1,6 +1,6 @@
-(ns scramblies.core)
+(ns scramblies.core
+  (:require [clojure.set :as set]))
 
 (defn scramble? [str1 str2]
-  (if (= str1 "katas")
-    false
-    true))
+  (println "set")
+  (set/subset? (set str2) (set str1)))
