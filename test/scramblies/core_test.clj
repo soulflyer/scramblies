@@ -10,4 +10,5 @@
              (scramble? "cedewaraaossoqqyt" "codewars") => true
              (scramble? "katas"  "steak") => false
              (scramble? "katas" "katas") => true
-             (scramble? "ketas" "steak") => true))
+             (scramble? "ketas" "steak") => true
+             (scramble? "ktas" "katas") => false))
